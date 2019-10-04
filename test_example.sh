@@ -15,6 +15,7 @@ python -m pip install coverage matplotlib nltk progressbar2 --user
 python -m pip install olefile --user
 python -m pip install --global-option="build_ext" --global-option="--disable-jpeg" pillow --user
 python -m pip install --extra-index-url https://developer.download.nvidia.com/compute/redist nvidia-dali --user
+python -m pip install librosa==0.6.3 tqdm --user
 
 run="coverage run -a --branch"
 
