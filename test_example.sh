@@ -102,6 +102,15 @@ echo "Text classification example"
 $run examples/text_classification/train_text_classifier.py --dataset dbpedia -e 1 -b 1 --test
 $run examples/text_classification/train_text_classifier.py --dataset dbpedia --gpu=0 -e 1 -b 1 --test
 
+# wavenet
+echo "WaveNet example"
+
+$run examples/wavenet/train.py --dataset ../data/wavenet --device 0 --snapshot_interval 1 --display_interval 1
+$run examples/wavenet/generate.py --input ../data/wavenet/wav48/p001/silence.wav --device 0 --model result/snapshot_1
+
+$run examples/wavenet/train.py --dataset ../data/wavenet --snapshot_interval 1 --display_interval 1
+$run examples/wavenet/generate.py --input ../data/wavenet/wav48/p001/silence.wav --model result/snapshot_1
+
 # show coverage
 coverage report -m --include="examples/*"
 coverage xml --include="examples/*"
